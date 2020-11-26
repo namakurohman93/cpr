@@ -1,0 +1,73 @@
+{
+  "week": {
+    "1": {
+      "day": {
+        "1": [
+          "first-challenge-git-phase-1",
+          "problem-solving",
+          "broken-palindrome-swapper",
+          "susun-kursi",
+          "money-coins"
+        ],
+        "2": [
+          "roman-numerals-recursive",
+          "numbers-in-words",
+          "linear-search",
+          "selection-sort",
+          "binary-search",
+          "dictionary-sort"
+        ],
+        "3": [
+          "check-vowels-in-array",
+          "jsracer"
+        ],
+        "4": [
+          "advanced-calculator",
+          "parsing-data",
+          "mango-tree"
+        ],
+        "5": [
+          "tree-grove",
+          "cookies-and-ovens"
+        ]
+      }
+    },
+    "2": {
+      "day": {
+        "1": ["object-composition"],
+        "2": [
+          "callback-belanja",
+          "callback-countdown",
+          "callback-multiple-file",
+          "js-todos"
+        ],
+        "3": ["hospital-interface"],
+        "4": [
+          "all-relations-case-study",
+          "schema-address-book",
+          "schema-simple-e-commerce",
+          "schema-poll-db"
+        ],
+        "5": ["poll-db"]
+      }
+    },
+    "3": {
+      "day": {
+        "1": ["school-application-express"],
+        "2": ["school-application-mvc"],
+        "3": ["school-application-refactor"],
+        "4": ["school-application-promise"],
+        "5": ["school-application-sequelize"]
+      }
+    },
+    "4": {
+      "day": {
+        "1": ["movies-app"],
+        "2": ["movies-app"],
+        "3": ["movies-app"],
+        "4": ["movies-app"],
+        "5": ["movies-app"]
+      }
+    }
+  }
+}
