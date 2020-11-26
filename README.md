@@ -1,0 +1,2 @@
+# cpr
+Check Pull Requests
