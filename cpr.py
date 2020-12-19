@@ -51,6 +51,8 @@ def main():
     challenges = read_file("./challenges.json")["week"][args.week]["day"][args.day]
 
     for challenge in challenges:
+        students_who_pull_request = []
+        students_who_dont = []
         response = requests.get(f"{url}/repos/{config['organization']}/{challenge}/pulls",
                                 headers=headers, params=params)
         pulls = response.json()
@@ -58,10 +60,17 @@ def main():
 
         for pull in pulls:
             if pull["user"]["login"] in students_github:
-                student_name = get_student_name(config["students"], pull["user"]["login"])
-                print(f"{number}. {student_name} mengumpulkan challenge {challenge}")
-                number += 1
-        print("===================================")
+                students_who_pull_request.append(pull["user"]["login"])
+
+        for student in students_github:
+            if student not in students_who_pull_request:
+                students_who_dont.append(get_student_name(config["students"], student))
+
+        if len(students_who_dont) > 0:
+            for student in students_who_dont:
+                print(f"{student} tidak mengumpulkan challenge {challenge}")
+        else:
+            print(f"Congrats... semua buddy mengumpulkan challenge {challenge}")
 
 
 if __name__ == '__main__':
