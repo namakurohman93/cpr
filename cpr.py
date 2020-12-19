@@ -56,7 +56,6 @@ def main():
         response = requests.get(f"{url}/repos/{config['organization']}/{challenge}/pulls",
                                 headers=headers, params=params)
         pulls = response.json()
-        number = 1
 
         for pull in pulls:
             if pull["user"]["login"] in students_github:
