@@ -27,22 +27,12 @@ def get_student_name(students, github):
 
 def argument_parser():
     parser = argparse.ArgumentParser(description="Check pull requests of challenges")
-    parser.add_argument(
-        "-w",
-        "--week",
-        help="week of the challenges",
-        default="1",
-        type=str,
-        metavar="week",
-    )
-    parser.add_argument(
-        "-d",
-        "--day",
-        help="day of the challenges",
-        default="1",
-        type=str,
-        metavar="day",
-    )
+    parser.add_argument("-w", "--week",
+                        help="week of the challenges",
+                        default="1", type=str, metavar="week")
+    parser.add_argument("-d", "--day",
+                        help="day of the challenges",
+                        default="1", type=str, metavar="day")
     return parser.parse_args()
 
 
@@ -56,15 +46,13 @@ def main():
     }
     params = {"per_page": "100"}
     config = read_file("./config.json")
-    students_github = list(map(lambda student: student["github"], config["students"]))
+    students_github = list(map(lambda student: student["github"],
+                                config["students"]))
     challenges = read_file("./challenges.json")["week"][args.week]["day"][args.day]
 
     for challenge in challenges:
-        response = requests.get(
-            f"{url}/repos/{config['organization']}/{challenge}/pulls",
-            headers=headers,
-            params=params,
-        )
+        response = requests.get(f"{url}/repos/{config['organization']}/{challenge}/pulls",
+                                headers=headers, params=params)
         pulls = response.json()
 
         students_who_pull_request = [
